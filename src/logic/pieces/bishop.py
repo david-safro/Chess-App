@@ -1,0 +1,1 @@
+#bishop class is handled here
