@@ -5,7 +5,7 @@ from .move_reader import get_rounded_position
 import sys
 
 sys.path.append("..")
-from src.board_data.data import board
+import src.board_data.data
 
 
 class UI:
@@ -14,8 +14,10 @@ class UI:
 
     def legal_move_display(self, win):
         rounded_pos = get_rounded_position()
-        print(board[rounded_pos].get_valid_moves(board))
-        render(win, board[rounded_pos].get_valid_moves(board))
+        if src.board_data.data.board[rounded_pos] != 0 and rounded_pos != src.board_data.data.selected_piece:
+            print("selected")
+            src.board_data.data.selected_piece = rounded_pos
+            render(win, src.board_data.data.board[rounded_pos].get_valid_moves(src.board_data.data.board))
 
     def ui_render(self, win: pygame.surface.Surface, board_x: int, board_y: int):
         render_board(win, board_x, board_y)

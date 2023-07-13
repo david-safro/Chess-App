@@ -24,4 +24,4 @@ class Color(Enum):
     YELLOW = (255, 255, 0)
     ORANGE = (255, 165, 0)
     GRAY = (128, 128, 128)
-    SHADER_GRAY = (128, 128, 128, 128)
+    SHADER_GRAY = (128, 128, 128, 50)

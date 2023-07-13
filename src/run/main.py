@@ -8,7 +8,7 @@ from src.ui.move_reader import get_rounded_position
 from src.board_data.data import board
 
 pygame.init()
-win = pygame.display.set_mode((Screen.WIDTH.value, Screen.HEIGHT.value))
+win = pygame.display.set_mode((Screen.WIDTH.value, Screen.HEIGHT.value), pygame.SRCALPHA)
 pygame.display.set_caption(Screen.TITLE.value)
 UI = UI()
 
