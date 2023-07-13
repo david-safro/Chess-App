@@ -23,6 +23,7 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                UI.ui_render(win, 0, 0)
                 UI.legal_move_display(win)
 
         clock.tick(Screen.FPS.value)
