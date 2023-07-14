@@ -13,7 +13,6 @@ def render_white_pieces(win):
         for col in range(len(BoardData.board[0])):
             if BoardData.board[row, col] != 0:
                 win.blit(White.KNIGHT.value, BoardData.board[row, col].pos)
-                print("rendered", (row, col))
 
 
 def render_black_pieces(win):

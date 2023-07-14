@@ -17,8 +17,8 @@ class UI:
             src.board_data.data.possible_moves = src.board_data.data.board[rounded_pos].get_valid_moves(src.board_data.data.board)
             render(win, src.board_data.data.possible_moves)
         elif rounded_pos in src.board_data.data.possible_moves:
-            src.board_data.data.board[src.board_data.data.selected_piece].pos = rounded_pos
-            print(src.board_data.data.board[src.board_data.data.selected_piece].pos)
+            src.board_data.data.board[src.board_data.data.selected_piece].pos = (rounded_pos[0]*100, rounded_pos[1]*100)
+            src.board_data.data.board[rounded_pos], src.board_data.data.board[src.board_data.data.selected_piece] = src.board_data.data.board[src.board_data.data.selected_piece], src.board_data.data.board[rounded_pos]
             src.board_data.data.selected_piece = None
             src.board_data.data.possible_moves = []
 
@@ -26,9 +26,9 @@ class UI:
         else:
             src.board_data.data.selected_piece = None
             src.board_data.data.possible_moves = []
-        print(src.board_data.data.possible_moves, src.board_data.data.selected_piece)
 
     def ui_render(self, win: pygame.surface.Surface, board_x: int, board_y: int):
         render_board(win, board_x, board_y)
+        self.legal_move_display(win)
         render_white_pieces(win)
         render_black_pieces(win)
