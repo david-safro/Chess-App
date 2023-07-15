@@ -19,3 +19,9 @@ class White(Enum):
                                           (Board.CELL.value, Board.CELL.value))
     BISHOP = pygame.transform.smoothscale(pygame.image.load("../images/white/wb.svg"),
                                         (Board.CELL.value, Board.CELL.value))
+    ROOK = pygame.transform.smoothscale(pygame.image.load("../images/white/wr.svg"),
+                                        (Board.CELL.value, Board.CELL.value))
+    QUEEN = pygame.transform.smoothscale(pygame.image.load("../images/white/wq.svg"),
+                                        (Board.CELL.value, Board.CELL.value))
+    KING = pygame.transform.smoothscale(pygame.image.load("../images/white/wk.svg"),
+                                        (Board.CELL.value, Board.CELL.value))

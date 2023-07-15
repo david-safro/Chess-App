@@ -3,7 +3,7 @@ sys.path.append('..')
 from src.ui.images import ChessBoard, White
 import src.board_data.data as BoardData
 
-PIECES = [White.PAWN, White.KNIGHT, White.BISHOP]
+PIECES = [White.PAWN, White.KNIGHT, White.BISHOP, White.ROOK, White.QUEEN, White.KING]
 
 def render_board(win, x, y):
     win.blit(ChessBoard.BOARD_IMG.value, (x, y))
