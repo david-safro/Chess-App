@@ -12,5 +12,10 @@ class ChessBoard(Enum):
 
 
 class White(Enum):
+
     KNIGHT = pygame.transform.smoothscale(pygame.image.load("../images/white/wkn.svg"),
                                     (Board.CELL.value, Board.CELL.value))
+    PAWN = pygame.transform.smoothscale(pygame.image.load("../images/white/wp.svg"),
+                                          (Board.CELL.value, Board.CELL.value))
+    BISHOP = pygame.transform.smoothscale(pygame.image.load("../images/white/wb.svg"),
+                                        (Board.CELL.value, Board.CELL.value))
