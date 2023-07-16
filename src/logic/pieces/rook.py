@@ -1,8 +1,9 @@
-from .piece import Piece
 import numpy as np
 import sys
+from .piece import Piece
 
 sys.path.append("..")
+
 
 class Rook(Piece):
     def get_valid_moves(self, board):

@@ -1,5 +1,5 @@
 import pygame
-from .board_render import render_board, render_white_pieces, render_black_pieces
+from .board_render import render_board, render_pieces
 from .Components.legal_move_denoter import render
 from .move_reader import get_rounded_position
 from src.board_data import data
@@ -30,5 +30,4 @@ class UI:
     def ui_render(self, win: pygame.surface.Surface, board_x: int, board_y: int):
         render_board(win, board_x, board_y)
         self.legal_move_display(win)
-        render_white_pieces(win)
-        render_black_pieces(win)
+        render_pieces(win)
