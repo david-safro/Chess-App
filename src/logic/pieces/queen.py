@@ -1,7 +1,6 @@
 from .piece import Piece
-import sys
 import numpy as np
-sys.path.append("..")
+
 
 class Queen(Piece):
     def get_valid_moves(self, board):
@@ -11,7 +10,7 @@ class Queen(Piece):
 
         # Helper function to check if the square is on the board and empty
         def is_valid_square(r, c):
-            return 0 <= r < 8 and 0 <= c < 8 and board[r, c] == 0
+            return 8 > r >= 0 == board[r, c] and 0 <= c < 8
 
         # Diagonal moves
         directions = [(-1, -1), (-1, 1), (1, -1), (1, 1)]

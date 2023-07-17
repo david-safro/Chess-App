@@ -1,11 +1,6 @@
 import pygame
-import sys
-
-sys.path.append('..')
 from src.constants import Screen, Color
 from src.ui.ui import UI
-from src.ui.move_reader import get_rounded_position
-from src.board_data.data import board
 
 pygame.init()
 win = pygame.display.set_mode((Screen.WIDTH.value, Screen.HEIGHT.value))
@@ -24,7 +19,6 @@ def main():
                 run = False
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 UI.ui_render(win, 0, 0)
-
 
         clock.tick(Screen.FPS.value)
         pygame.display.update()

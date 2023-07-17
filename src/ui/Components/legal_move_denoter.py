@@ -1,7 +1,4 @@
 import pygame
-import sys
-
-sys.path.append("..")
 from src.constants import Board, Color
 
 

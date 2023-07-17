@@ -1,7 +1,5 @@
 from .piece import Piece
-import sys
 
-sys.path.append("..")
 
 class Knight(Piece):
     def get_valid_moves(self, chessboard):

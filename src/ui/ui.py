@@ -28,7 +28,6 @@ class UI:
             data.selected_piece = None
             data.possible_moves = []
 
-
     def ui_render(self, win: pygame.surface.Surface, board_x: int, board_y: int):
         render_board(win, board_x, board_y)
         self.legal_move_display(win)

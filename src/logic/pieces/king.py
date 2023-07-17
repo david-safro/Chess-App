@@ -1,7 +1,6 @@
 from .piece import Piece
-import sys
 import numpy as np
-sys.path.append("..")
+
 
 class King(Piece):
     def get_valid_moves(self, board):

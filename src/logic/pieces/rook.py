@@ -1,8 +1,5 @@
 import numpy as np
-import sys
 from .piece import Piece
-
-sys.path.append("..")
 
 
 class Rook(Piece):

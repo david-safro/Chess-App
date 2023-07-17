@@ -12,7 +12,7 @@ class Board(Enum):
     SIZE = 8
     WIDTH = SIZE * 100
     HEIGHT = SIZE * 100
-    CELL = WIDTH // SIZE
+    CELL = WIDTH / SIZE
 
 
 class Color(Enum):
