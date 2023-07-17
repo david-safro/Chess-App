@@ -4,6 +4,15 @@ from enum import Enum
 
 sys.path.append('..')
 from src.constants import Board
+import io
+
+def load_and_scale_svg(filename, scale):
+    svg_string = open(filename, "rt").read()
+    start = svg_string.find('<svg')
+    if start > 0:
+        svg_string = svg_string[:start + 4] + f' transform="scale({scale})"' + svg_string[start + 4:]
+    return pygame.image.load(io.BytesIO(svg_string.encode()))
+
 
 
 class ChessBoard(Enum):
@@ -12,31 +21,18 @@ class ChessBoard(Enum):
 
 
 class White(Enum):
+    KNIGHT = load_and_scale_svg("../images/white/wkn.svg", 100/45)
+    PAWN = load_and_scale_svg("../images/white/wp.svg", 100/45)
+    BISHOP = load_and_scale_svg("../images/white/wb.svg", 100/45)
+    ROOK = load_and_scale_svg("../images/white/wr.svg", 100/45)
+    QUEEN = load_and_scale_svg("../images/white/wq.svg", 100/45)
+    KING = load_and_scale_svg("../images/white/wk.svg", 100/45)
 
-    KNIGHT = pygame.transform.smoothscale(pygame.image.load("../images/white/wkn.svg"),
-                                    (Board.CELL.value, Board.CELL.value))
-    PAWN = pygame.transform.smoothscale(pygame.image.load("../images/white/wp.svg"),
-                                          (Board.CELL.value, Board.CELL.value))
-    BISHOP = pygame.transform.smoothscale(pygame.image.load("../images/white/wb.svg"),
-                                        (Board.CELL.value, Board.CELL.value))
-    ROOK = pygame.transform.smoothscale(pygame.image.load("../images/white/wr.svg"),
-                                        (Board.CELL.value, Board.CELL.value))
-    QUEEN = pygame.transform.smoothscale(pygame.image.load("../images/white/wq.svg"),
-                                        (Board.CELL.value, Board.CELL.value))
-    KING = pygame.transform.smoothscale(pygame.image.load("../images/white/wk.svg"),
-                                        (Board.CELL.value, Board.CELL.value))
 
 class Black(Enum):
-
-    KNIGHT = pygame.transform.smoothscale(pygame.image.load("../images/black/bkn.svg"),
-                                    (Board.CELL.value, Board.CELL.value))
-    PAWN = pygame.transform.smoothscale(pygame.image.load("../images/black/bp.svg"),
-                                          (Board.CELL.value, Board.CELL.value))
-    BISHOP = pygame.transform.smoothscale(pygame.image.load("../images/black/bb.svg"),
-                                        (Board.CELL.value, Board.CELL.value))
-    ROOK = pygame.transform.smoothscale(pygame.image.load("../images/black/br.svg"),
-                                        (Board.CELL.value, Board.CELL.value))
-    QUEEN = pygame.transform.smoothscale(pygame.image.load("../images/black/bq.svg"),
-                                        (Board.CELL.value, Board.CELL.value))
-    KING = pygame.transform.smoothscale(pygame.image.load("../images/black/bk.svg"),
-                                        (Board.CELL.value, Board.CELL.value))
+    KNIGHT = load_and_scale_svg("../images/black/bkn.svg", 100/45)
+    PAWN = load_and_scale_svg("../images/black/bp.svg", 100/45)
+    BISHOP = load_and_scale_svg("../images/black/bb.svg", 100/45)
+    ROOK = load_and_scale_svg("../images/black/br.svg", 100/45)
+    QUEEN = load_and_scale_svg("../images/black/bq.svg", 100/45)
+    KING = load_and_scale_svg("../images/black/bk.svg", 100/45)

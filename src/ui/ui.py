@@ -4,6 +4,7 @@ from .Components.legal_move_denoter import render
 from .move_reader import get_rounded_position
 from src.board_data import data
 
+
 class UI:
     def __init__(self):
         pass
@@ -26,6 +27,7 @@ class UI:
         else:
             data.selected_piece = None
             data.possible_moves = []
+
 
     def ui_render(self, win: pygame.surface.Surface, board_x: int, board_y: int):
         render_board(win, board_x, board_y)
