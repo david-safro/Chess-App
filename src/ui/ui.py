@@ -19,11 +19,13 @@ class UI:
             data.selected_piece = rounded_pos
             data.possible_moves = board[rounded_pos].get_valid_moves(board)
             render(win, data.possible_moves)
-        elif rounded_pos in possible_moves:
+        elif rounded_pos in possible_moves and board[selected_piece].white == data.white_turn:
             board[selected_piece].pos = (rounded_pos[0] * 100, rounded_pos[1] * 100)
             board[rounded_pos], board[selected_piece] = board[selected_piece], board[rounded_pos]
             data.selected_piece = None
             data.possible_moves = []
+            data.white_turn = not data.white_turn
+            print(data.white_turn)
         else:
             data.selected_piece = None
             data.possible_moves = []

@@ -1,7 +1,6 @@
 from .piece import Piece
 import numpy as np
 
-
 class Bishop(Piece):
     def get_valid_moves(self, board):
         possible_moves = []
@@ -10,7 +9,7 @@ class Bishop(Piece):
 
         # Helper function to check if the square is on the board and empty
         def is_valid_square(r, c):
-            return 8 > r >= 0 == board[r, c] and 0 <= c < 8
+            return 0 <= r < 8 and 0 <= c < 8 and board[r, c] == 0
 
         # Diagonal moves
         directions = [(-1, -1), (-1, 1), (1, -1), (1, 1)]

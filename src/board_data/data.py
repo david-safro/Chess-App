@@ -24,5 +24,6 @@ board[6, 0] = knight.Knight(False, (600, 0), 1)
 board[7, 0] = rook.Rook(False, (700, 0), 3)
 for x in range(0, 8):
     board[x, 1] = pawn.Pawn(False, (x*100, 100), 0)
+white_turn = True
 selected_piece = None
 possible_moves = []
