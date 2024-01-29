@@ -1,1 +1,2 @@
-why the fuck am i making an application with a graphical element in python
+In progress
+Chess app in python made with PyGame and Numpy
